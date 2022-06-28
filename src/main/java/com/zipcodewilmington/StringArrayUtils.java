@@ -2,6 +2,7 @@ package com.zipcodewilmington;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,9 +30,7 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-
        return array[array.length -1];
-
     }
 
     /**
@@ -59,14 +58,19 @@ public class StringArrayUtils {
 
    //The below works, but I actually hate it. I'm sure there's a better way... Core Java had something on this.
     public static String[] reverse(String[] array) {
-        String[] reversedArray = new String[array.length];
-        int inputArrayHighestIndex = array.length - 1;
-        int newArrayIndexWrite = 0;
-        for (int i = inputArrayHighestIndex; i >=0; i--) {
-            reversedArray[newArrayIndexWrite] = array[i];
-            newArrayIndexWrite++;
-        }
+        List<String> inputArrayAsList = new ArrayList<>(Arrays.asList(array));
+        Collections.reverse(inputArrayAsList);
+        String[] reversedArray = inputArrayAsList.toArray(new String[inputArrayAsList.size()]);
         return reversedArray;
+//        String[] reversedArray = new String[array.length];
+//        int inputArrayHighestIndex = array.length - 1;
+//        int newArrayIndexWrite = 0;
+//        for (int i = inputArrayHighestIndex; i >=0; i--) {
+//            reversedArray[newArrayIndexWrite] = array[i];
+//            newArrayIndexWrite++;
+//        }
+//        System.out.println(reversedArray);
+//        return reversedArray;
     }
 
     /**
@@ -74,7 +78,8 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
+        boolean isPalindrome = Arrays.equals(array, StringArrayUtils.reverse(array));
+        return isPalindrome;
     }
 
     /**
