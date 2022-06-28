@@ -46,8 +46,8 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        List<String> inputArrayAsLit = new ArrayList<>(Arrays.asList(array));
-        return inputArrayAsLit.contains(value);
+        List<String> inputArrayAsList = new ArrayList<>(Arrays.asList(array));
+        return inputArrayAsList.contains(value);
     }
 
     /**
@@ -97,7 +97,34 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        return null;
+        List<String> builtArray = new ArrayList<>();
+        String lastString = "";
+
+        for (int i = 0; i <array.length; i++) {
+            if (array[i] != lastString) {
+                builtArray.add(array[i]);
+            }
+            lastString = array[i];
+        }
+
+        String[] arrayConsecutiveDoublesRemoved = new String[builtArray.size()];
+        return arrayConsecutiveDoublesRemoved;
+
+//        List<String> inputArrayAsList = new ArrayList<>(Arrays.asList(array));
+//        int inputSize = inputArrayAsList.size();
+//        for (int i = 0; i < inputArrayAsList.size(); i++) {
+//            String currentIndex = inputArrayAsList.get(i);
+//            String nextIndex = inputArrayAsList.get(i + 1);
+//            if (i == inputArrayAsList.size() - 1) {
+//                return null;
+//            }
+//            if (currentIndex.equals(nextIndex)){
+//                inputArrayAsList.remove(nextIndex);
+//                i--;
+//            }
+//        }
+//        String[] alteredString = new String[inputArrayAsList.size()];
+//        return alteredString;
     }
 
     /**
