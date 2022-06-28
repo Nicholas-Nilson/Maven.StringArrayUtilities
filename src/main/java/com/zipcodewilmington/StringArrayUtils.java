@@ -39,7 +39,7 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        return null;
+        return array[array.length -2];
     }
 
     /**
@@ -56,8 +56,17 @@ public class StringArrayUtils {
      * @param array of String objects
      * @return an array with identical contents in reverse order
      */ // TODO
+
+   //The below works, but I actually hate it. I'm sure there's a better way... Core Java had something on this.
     public static String[] reverse(String[] array) {
-        return null;
+        String[] reversedArray = new String[array.length];
+        int inputArrayHighestIndex = array.length - 1;
+        int newArrayIndexWrite = 0;
+        for (int i = inputArrayHighestIndex; i >=0; i--) {
+            reversedArray[newArrayIndexWrite] = array[i];
+            newArrayIndexWrite++;
+        }
+        return reversedArray;
     }
 
     /**
