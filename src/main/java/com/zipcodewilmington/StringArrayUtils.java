@@ -98,16 +98,18 @@ public class StringArrayUtils {
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
         List<String> builtArray = new ArrayList<>();
-        String lastString = "";
+        builtArray.add(array[0]);
+        String lastString = array[0];
 
-        for (int i = 0; i <array.length; i++) {
+        for (int i = 1; i <array.length; i++) {
             if (array[i] != lastString) {
                 builtArray.add(array[i]);
             }
             lastString = array[i];
         }
+        String[] arrayConsecutiveDoublesRemoved = builtArray.toArray(new String[builtArray.size()]);
+//        String[] arrayConsecutiveDoublesRemoved = new String[builtArray.size()];
 
-        String[] arrayConsecutiveDoublesRemoved = new String[builtArray.size()];
         return arrayConsecutiveDoublesRemoved;
 
 //        List<String> inputArrayAsList = new ArrayList<>(Arrays.asList(array));

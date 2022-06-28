@@ -13,7 +13,7 @@ public class GetConsecutiveDuplicatesTest {
         String[] actual = StringArrayUtils.removeConsecutiveDuplicates(array);
         String[] expected = {"aba", "baa", "bab", "bba", "bbb"};
 //        Assert.assertEquals(actual, expected);
-        actual.equals(expected);
+        Assert.assertEquals(expected, actual);
     }
 
 
@@ -23,9 +23,8 @@ public class GetConsecutiveDuplicatesTest {
         String[] array = {"aba", "aba", "baa", "bab", "bba", "zzz", "bba", "bba", "bba", "bbb", "bbb"};
         String[] actual = StringArrayUtils.removeConsecutiveDuplicates(array);
         String[] expected = {"aba", "baa", "bab", "bba", "zzz", "bba", "bbb"};
-//        Assert.assertEquals(actual, expected);
-
-        actual.equals(expected);    }
+        Assert.assertEquals(actual, expected);
+    }
 
 
     @Test
