@@ -29,7 +29,9 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        return null;
+
+       return array[array.length -1];
+
     }
 
     /**
@@ -97,6 +99,7 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
+
         List<String> builtArray = new ArrayList<>();
         builtArray.add(array[0]);
         String lastString = array[0];
