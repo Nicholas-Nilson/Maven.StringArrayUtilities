@@ -95,19 +95,6 @@ public class StringArrayUtils {
             }
         }
         return true;
-//        String[] alphabet = new String[26];
-//        int alphabetBuilder = 0;
-//        for (Character  c = 'A'; c <= 'Z'; c++) {
-//            alphabet[alphabetBuilder] += c;
-//            alphabetBuilder++;
-//        }
-//        ArrayList<String> inputArray = new ArrayList<>();
-//        for (int i = 0; i < 25; i++) {
-//            if (!inputArray.contains(alphabet[i])) {
-//                return false;
-//            }
-//        }
-//        return true;
     }
 
     /**
@@ -116,7 +103,11 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        int occurrenceCounter = 0;
+        for (int i = 0; i <array.length; i++) {
+            if (value == array[i]){occurrenceCounter++;}
+        }
+        return occurrenceCounter;
     }
 
     /**
