@@ -170,9 +170,12 @@ public class StringArrayUtils {
             if (i +1 != array.length) {
         StringBuilder addString = new StringBuilder();
                 addString.append(array[i]);
-                while (array[i].equals(array[i + 1]) && i + 1 < array.length) {
+                while (array[i].equals(array[i + 1])) {
                     addString.append(array[i]);
                     i++;
+                    if (i + 1 == array.length) {
+                        break;
+                    }
                 }
                 dupArray.add(addString.toString());
             } else {
@@ -186,12 +189,14 @@ public class StringArrayUtils {
 //List<String> dupArray = new ArrayList<>();
 //
 //for (int i = 0; i < array.length; i++) {
-//    if (i +1 != array.length) {
-////        StringBuilder addString = new StringBuilder();
+//    if (i + 1 != array.length) {
 //        String nextIndex = array[i];
-//        while (array[i].equals(array[i + 1]) && i + 1 < array.length) {
+//        while (array[i].equals(array[i + 1])) {
 //            nextIndex += array[i];
 //            i++;
+//            if (i + 1 == array.length) {
+//                break;
+//            }
 //        }
 //        dupArray.add(nextIndex);
 //    } else {
