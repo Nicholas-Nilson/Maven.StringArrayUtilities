@@ -164,23 +164,43 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-List<String> dupArray = new ArrayList<>();
+        List<String> dupArray = new ArrayList<>();
 
-for (int i = 0; i < array.length; i++) {
-    if (i +1 != array.length) {
-        String nextIndex = array[i];
-        while (array[i].equals(array[i + 1]) && i + 1 < array.length) {
-            nextIndex += array[i];
-            i++;
+        for (int i = 0; i < array.length; i++) {
+            if (i +1 != array.length) {
+        StringBuilder addString = new StringBuilder();
+                addString.append(array[i]);
+                while (array[i].equals(array[i + 1]) && i + 1 < array.length) {
+                    addString.append(array[i]);
+                    i++;
+                }
+                dupArray.add(addString.toString());
+            } else {
+                dupArray.add(array[i]);
+            }
         }
-        dupArray.add(nextIndex);
-    } else {
-        dupArray.add(array[i]);
-    }
-}
-String[] result = new String[dupArray.size()];
-dupArray.toArray(result);
-return result;
+        String[] result = new String[dupArray.size()];
+        dupArray.toArray(result);
+        return result;
+
+//List<String> dupArray = new ArrayList<>();
+//
+//for (int i = 0; i < array.length; i++) {
+//    if (i +1 != array.length) {
+////        StringBuilder addString = new StringBuilder();
+//        String nextIndex = array[i];
+//        while (array[i].equals(array[i + 1]) && i + 1 < array.length) {
+//            nextIndex += array[i];
+//            i++;
+//        }
+//        dupArray.add(nextIndex);
+//    } else {
+//        dupArray.add(array[i]);
+//    }
+//}
+//String[] result = new String[dupArray.size()];
+//dupArray.toArray(result);
+//return result;
 
 //remove consecutive doubles code
 //        List<String> builtArray = new ArrayList<>();
