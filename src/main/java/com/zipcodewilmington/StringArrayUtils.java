@@ -116,7 +116,10 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+        ArrayList<String> removedValueArrayList = new ArrayList<>(Arrays.asList(array));
+        while (removedValueArrayList.remove(valueToRemove)) {}
+        String[] updatedArray = removedValueArrayList.toArray(new String[removedValueArrayList.size()]);
+        return updatedArray;
     }
 
     /**
